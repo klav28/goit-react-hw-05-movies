@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, Link, Outlet } from 'react-router-dom';
 import { API_KEY, BASE_URL, IMAGE_BASE_URL } from 'components/vars';
 
 const MovieInfo = () => {
@@ -22,20 +22,27 @@ const MovieInfo = () => {
     };
 
     fetchFilm(movieId).then(result => {
-      console.log(result.data);
+      console.log('Movie Info -> ', result.data);
       setFilmInfo(result.data);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <div>
-      <h1>{filmInfo.title}</h1>
-      <img
-        src={`${IMAGE_BASE_URL}w500/${filmInfo.poster_path}`}
-        alt={filmInfo.title}
-      />
-    </div>
+    <>
+      <div>
+        <h1>{filmInfo.title}</h1>
+        <img
+          src={`${IMAGE_BASE_URL}w500/${filmInfo.poster_path}`}
+          alt={filmInfo.title}
+        />
+      </div>
+      <div>
+        <Link to={`/movies/${movieId}/cast`}>Cast</Link>
+        <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
+      </div>
+      <Outlet />
+    </>
   );
 };
 
