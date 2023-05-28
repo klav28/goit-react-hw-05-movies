@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import { API_KEY, BASE_URL } from 'components/vars';
+import { API_KEY, BASE_URL } from '../Vars';
 
-const Reviews = () => {
+const Cast = () => {
   const { movieId } = useParams();
 
-  const [reviews, setReviews] = useState([]);
+  const [cast, setCast] = useState([]);
 
   useEffect(() => {
-    const fetchReviews = async page => {
+    const fetchCast = async page => {
       try {
-        return await axios.get(`${BASE_URL}movie/${movieId}/reviews`, {
+        return await axios.get(`${BASE_URL}movie/${movieId}/credits`, {
           params: {
             api_key: API_KEY,
           },
@@ -21,17 +21,17 @@ const Reviews = () => {
       }
     };
 
-    fetchReviews(movieId).then(result => {
-      setReviews(result.data);
+    fetchCast(movieId).then(result => {
+      setCast(result.data);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    console.log('Reviews Info -> ', reviews);
-  }, [reviews]);
+    console.log('Cast Info -> ', cast);
+  }, [cast]);
 
-  return <div>REVIEWS {movieId}</div>;
+  return <div>CAST {movieId}</div>;
 };
 
-export default Reviews;
+export default Cast;

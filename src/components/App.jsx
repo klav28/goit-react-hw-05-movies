@@ -1,12 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
-import Home from './Home/Home';
-import Movies from './Movies/Movies';
+import Home from './Pages/Home';
+import Movies from './Pages/Movies';
 import { SharedLayout } from './SharedLayout/SharedLayout';
-import MovieDetails from './MovieDetails/MovieDetails';
-import Cast from './Cast/Cast';
-import Reviews from './Reviews/Reviews';
-
-// /search/search-movies пошук фільму за ключовим словом на сторінці фільмів.
+import MovieDetails from './Pages/MovieDetails';
+import Cast from './Pages/Cast';
+import Reviews from './Pages/Reviews';
 
 // Додай асинхронне завантаження JS-коду для маршрутів застосунку, використовуючи React.lazy() і Suspense.
 

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, Link, Outlet } from 'react-router-dom';
-import { API_KEY, BASE_URL, IMAGE_BASE_URL } from 'components/vars';
+import { API_KEY, BASE_URL, IMAGE_BASE_URL } from '../Vars';
 
 const MovieInfo = () => {
   const { movieId } = useParams();
@@ -14,6 +14,8 @@ const MovieInfo = () => {
         return await axios.get(`${BASE_URL}movie/${movieId}`, {
           params: {
             api_key: API_KEY,
+            append_to_response: 'images',
+            language: 'uk',
           },
         });
       } catch (error) {

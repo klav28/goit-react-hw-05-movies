@@ -1,10 +1,15 @@
 import { useState, useEffect } from 'react';
-import { API_KEY, BASE_URL } from '../vars';
+import { useSearchParams } from 'react-router-dom';
+
+import { API_KEY, BASE_URL } from '../Vars';
 import axios from 'axios';
 
 const Movies = () => {
   const [findedFilms, setFindedFilms] = useState([]);
-  const [queryString, setQueryString] = useState([]);
+  const [searchParams] = useSearchParams();
+
+  const queryString = searchParams.get('query') ?? '';
+  console.log('Query -> ', queryString);
 
   useEffect(() => {
     const fetchSearch = async page => {
@@ -22,27 +27,23 @@ const Movies = () => {
       }
     };
 
-    fetchSearch(1).then(data => {
-      setFindedFilms(data.results);
-    });
+    if (queryString.trim !== '') {
+      fetchSearch(1).then(data => {
+        setFindedFilms(data.results);
+      });
+    }
   }, [queryString]);
-
-  const handleSearch = ev => {
-    ev.preventDefault();
-    const { querystring } = ev.target;
-
-    setQueryString(querystring.value);
-  };
 
   return (
     <div>
       Movies Page
-      <form onSubmit={handleSearch}>
+      <form>
         <input
           type="text"
-          name="querystring"
+          name="query"
           autoFocus
           placeholder="Search films..."
+          defaultValue={queryString}
         />
         <button type="submit">Search</button>
       </form>
