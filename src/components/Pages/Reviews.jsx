@@ -22,7 +22,7 @@ const Reviews = () => {
     };
 
     fetchReviews(movieId).then(result => {
-      setReviews(result.data);
+      setReviews(result.data.results);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -31,7 +31,19 @@ const Reviews = () => {
     console.log('Reviews Info -> ', reviews);
   }, [reviews]);
 
-  return <div>REVIEWS {movieId}</div>;
+  return (
+    <div>
+      <h3>REVIEWS</h3>
+      <ul>
+        {reviews.map(el => (
+          <li key={el.id}>
+            <p>{el.author}</p>
+            <p>{el.content} </p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 
 export default Reviews;

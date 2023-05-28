@@ -22,7 +22,7 @@ const Cast = () => {
     };
 
     fetchCast(movieId).then(result => {
-      setCast(result.data);
+      setCast(result.data.cast);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -31,7 +31,19 @@ const Cast = () => {
     console.log('Cast Info -> ', cast);
   }, [cast]);
 
-  return <div>CAST {movieId}</div>;
+  return (
+    <div>
+      <h3 className="text-xl text-gray-700">Cast</h3>
+      <ul>
+        {cast.length > 0 &&
+          cast.map(el => (
+            <li key={el.cast_id}>
+              {el.name} | {el.character}
+            </li>
+          ))}
+      </ul>
+    </div>
+  );
 };
 
 export default Cast;

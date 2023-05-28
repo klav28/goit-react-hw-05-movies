@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { API_KEY, BASE_URL } from '../Vars';
 import axios from 'axios';
+import FilmGallery from 'components/FIlmGallery/FilmGallery';
 
 const Home = () => {
   const [films, setFilms] = useState([]);
@@ -32,14 +32,10 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Trended Films</h1>
-      <ul>
-        {films.map(film => (
-          <li key={film.id}>
-            <Link to={`/movies/${film.id}`}>{film.title}</Link>
-          </li>
-        ))}
-      </ul>
+      <h1 className="p-5 pt-7 text-center text-4xl">
+        Trending Movies of the Day
+      </h1>
+      <FilmGallery filmArray={films} />
     </div>
   );
 };

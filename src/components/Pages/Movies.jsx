@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-
+import Container from '../Container/Container';
+import Searchbar from '../Searchbar/Searchbar';
 import { API_KEY, BASE_URL } from '../Vars';
 import axios from 'axios';
+import FilmGallery from 'components/FIlmGallery/FilmGallery';
 
 const Movies = () => {
   const [findedFilms, setFindedFilms] = useState([]);
   const [searchParams] = useSearchParams();
 
   const queryString = searchParams.get('query') ?? '';
-  console.log('Query -> ', queryString);
 
   useEffect(() => {
     const fetchSearch = async page => {
@@ -35,23 +36,10 @@ const Movies = () => {
   }, [queryString]);
 
   return (
-    <div>
-      Movies Page
-      <form>
-        <input
-          type="text"
-          name="query"
-          autoFocus
-          placeholder="Search films..."
-          defaultValue={queryString}
-        />
-        <button type="submit">Search</button>
-      </form>
-      <div>
-        {findedFilms.length > 0 &&
-          findedFilms.map(film => <p key={film.id}>{film.title}</p>)}
-      </div>
-    </div>
+    <Container>
+      <Searchbar querystring={queryString} />
+      {findedFilms.length > 0 && <FilmGallery filmArray={findedFilms} />}
+    </Container>
   );
 };
 
