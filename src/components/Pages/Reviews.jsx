@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import ReviewsItem from '../ReviewItem/ReviewItem';
 import { useParams } from 'react-router-dom';
 import { API_KEY, BASE_URL } from '../Vars';
 
@@ -33,14 +34,18 @@ const Reviews = () => {
 
   return (
     <div>
-      <h3>REVIEWS</h3>
-      <ul>
-        {reviews.map(el => (
-          <li key={el.id}>
-            <p>{el.author}</p>
-            <p>{el.content} </p>
-          </li>
-        ))}
+      <ul className="py-5">
+        {reviews.length > 0 ? (
+          reviews.map(el => (
+            <li key={el.id}>
+              <ReviewsItem item={el} />
+            </li>
+          ))
+        ) : (
+          <p className="text-center text-lg text-red-950">
+            No Reviews for this Film
+          </p>
+        )}
       </ul>
     </div>
   );

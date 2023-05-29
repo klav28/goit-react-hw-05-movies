@@ -16,9 +16,17 @@ const MovieInfoDetails = ({ movie }) => {
           {movie.title} <span className="font-thin">({year})</span>
         </h2>
         <p className="px-5 text-lg text-teal-800">{genreslist}</p>
-        <p className="px-5 pt-4 text-2xl italic text-orange-500 ">
-          {movie.tagline}
+        <p className="p-2 px-5 text-sm font-bold text-gray-600">
+          Release Date: {movie.release_date}{' '}
+          <span className="font-thin"> | </span>Rating: {movie.vote_average}
+          <span className="font-thin"> | </span>Duration:{' '}
+          {Math.round(movie.runtime / 60)} h {Math.round(movie.runtime % 60)} m
         </p>
+        {movie.tagline && (
+          <p className="px-5 pt-4 text-2xl italic text-orange-500 ">
+            {movie.tagline}
+          </p>
+        )}
         <p className="p-5">{movie.overview}</p>
       </StMovieDetails.Info>
     </StMovieDetails>

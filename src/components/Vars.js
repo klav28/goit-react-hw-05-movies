@@ -5,6 +5,7 @@ export const noPosterUrl = new URL(
   '../images/no-film-poster.jpg',
   import.meta.url
 );
+export const noAvatar = new URL('../images/no-avatar.png', import.meta.url);
 export const genres = {
   28: 'Action',
   12: 'Adventure',
