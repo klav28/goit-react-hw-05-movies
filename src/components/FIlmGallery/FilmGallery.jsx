@@ -41,7 +41,7 @@ const FilmGallery = ({ filmArray }) => {
         {filmsList.map(film => (
           <li key={film.id}>
             <StContainer.Card>
-              <StContainer.Link to={`/movies/${film.id}`}>
+              <StContainer.Link to={`movies/${film.id}`}>
                 <FilmGalleryItem film={film} />
               </StContainer.Link>
             </StContainer.Card>
