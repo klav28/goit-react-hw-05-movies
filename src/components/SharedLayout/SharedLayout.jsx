@@ -21,7 +21,7 @@ export const SharedLayout = () => {
             <StyledLink to="/" className="ml-5 pr-5 text-3xl" end>
               Home
             </StyledLink>
-            <StyledLink to="/movies" className="text-3xl">
+            <StyledLink to="movies" className="text-3xl">
               Movies
             </StyledLink>
           </nav>

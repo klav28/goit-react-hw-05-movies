@@ -24,7 +24,7 @@ const CastCard = ({ cast }) => {
 };
 
 CastCard.propTypes = {
-  film: PropTypes.object.isRequired,
+  film: PropTypes.object,
 };
 
 export default CastCard;
