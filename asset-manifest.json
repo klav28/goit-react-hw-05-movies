@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/goit-react-hw-05-movies/static/css/main.470094ba.css",
-    "main.js": "/goit-react-hw-05-movies/static/js/main.14291c1b.js",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.6ac68005.js",
     "static/js/421.333b0e33.chunk.js": "/goit-react-hw-05-movies/static/js/421.333b0e33.chunk.js",
     "static/js/615.382e3aa8.chunk.js": "/goit-react-hw-05-movies/static/js/615.382e3aa8.chunk.js",
-    "static/js/161.d876cbaa.chunk.js": "/goit-react-hw-05-movies/static/js/161.d876cbaa.chunk.js",
+    "static/js/161.398661da.chunk.js": "/goit-react-hw-05-movies/static/js/161.398661da.chunk.js",
     "static/js/261.355aff85.chunk.js": "/goit-react-hw-05-movies/static/js/261.355aff85.chunk.js",
     "static/js/821.1c7cd85b.chunk.js": "/goit-react-hw-05-movies/static/js/821.1c7cd85b.chunk.js",
     "static/js/279.2107e93c.chunk.js": "/goit-react-hw-05-movies/static/js/279.2107e93c.chunk.js",
@@ -12,10 +12,10 @@
     "static/media/no-film-poster.jpg": "/goit-react-hw-05-movies/static/media/no-film-poster.9f35a86af4617e061bc5.jpg",
     "index.html": "/goit-react-hw-05-movies/index.html",
     "main.470094ba.css.map": "/goit-react-hw-05-movies/static/css/main.470094ba.css.map",
-    "main.14291c1b.js.map": "/goit-react-hw-05-movies/static/js/main.14291c1b.js.map",
+    "main.6ac68005.js.map": "/goit-react-hw-05-movies/static/js/main.6ac68005.js.map",
     "421.333b0e33.chunk.js.map": "/goit-react-hw-05-movies/static/js/421.333b0e33.chunk.js.map",
     "615.382e3aa8.chunk.js.map": "/goit-react-hw-05-movies/static/js/615.382e3aa8.chunk.js.map",
-    "161.d876cbaa.chunk.js.map": "/goit-react-hw-05-movies/static/js/161.d876cbaa.chunk.js.map",
+    "161.398661da.chunk.js.map": "/goit-react-hw-05-movies/static/js/161.398661da.chunk.js.map",
     "261.355aff85.chunk.js.map": "/goit-react-hw-05-movies/static/js/261.355aff85.chunk.js.map",
     "821.1c7cd85b.chunk.js.map": "/goit-react-hw-05-movies/static/js/821.1c7cd85b.chunk.js.map",
     "279.2107e93c.chunk.js.map": "/goit-react-hw-05-movies/static/js/279.2107e93c.chunk.js.map",
@@ -23,6 +23,6 @@
   },
   "entrypoints": [
     "static/css/main.470094ba.css",
-    "static/js/main.14291c1b.js"
+    "static/js/main.6ac68005.js"
   ]
 }
