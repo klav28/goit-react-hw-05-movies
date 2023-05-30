@@ -1,5 +1,6 @@
 import StMovieDetails from './MovieInfoDetails.component';
 import { IMAGE_BASE_URL } from '../Vars';
+import PropTypes from 'prop-types';
 
 const MovieInfoDetails = ({ movie }) => {
   const genreslist = movie.genres.map(el => el.name).join(', ');
@@ -31,6 +32,10 @@ const MovieInfoDetails = ({ movie }) => {
       </StMovieDetails.Info>
     </StMovieDetails>
   );
+};
+
+MovieInfoDetails.propTypes = {
+  movie: PropTypes.object.isRequired,
 };
 
 export default MovieInfoDetails;

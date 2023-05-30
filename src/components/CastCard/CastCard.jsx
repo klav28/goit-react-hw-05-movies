@@ -1,4 +1,5 @@
 import { IMAGE_BASE_URL, noAvatar } from '../Vars';
+import PropTypes from 'prop-types';
 
 const CastCard = ({ cast }) => {
   return (
@@ -20,6 +21,10 @@ const CastCard = ({ cast }) => {
       </p>
     </div>
   );
+};
+
+CastCard.propTypes = {
+  film: PropTypes.object.isRequired,
 };
 
 export default CastCard;

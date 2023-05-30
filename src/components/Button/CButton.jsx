@@ -1,4 +1,6 @@
-export const CButton = ({ bgcolor, children }) => {
+import PropTypes from 'prop-types';
+
+const CButton = ({ bgcolor, children }) => {
   return (
     <div
       className={`${bgcolor} h-full w-full cursor-pointer p-2 text-center text-black`}
@@ -7,3 +9,9 @@ export const CButton = ({ bgcolor, children }) => {
     </div>
   );
 };
+
+CButton.propTypes = {
+  bgcolor: PropTypes.string.isRequired,
+};
+
+export default CButton;

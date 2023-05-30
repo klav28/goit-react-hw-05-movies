@@ -1,12 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
-import Home from './Pages/Home';
-import Movies from './Pages/Movies';
 import { SharedLayout } from './SharedLayout/SharedLayout';
-import MovieDetails from './Pages/MovieDetails';
-import Cast from './Pages/Cast';
-import Reviews from './Pages/Reviews';
+import { lazy } from 'react';
 
-// Додай асинхронне завантаження JS-коду для маршрутів застосунку, використовуючи React.lazy() і Suspense.
+const Movies = lazy(() => import('./Pages/Movies'));
+const Home = lazy(() => import('./Pages/Home'));
+const MovieDetails = lazy(() => import('./Pages/MovieDetails'));
+const Cast = lazy(() => import('./Pages/Cast'));
+const Reviews = lazy(() => import('./Pages/Reviews'));
 
 export const App = () => {
   return (

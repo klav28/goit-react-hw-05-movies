@@ -4,7 +4,7 @@ import Container from '../Container/Container';
 import MovieInfoDetails from '../MovieInfoDetails/MovieInfoDetails';
 import { useParams, Link, Outlet } from 'react-router-dom';
 import { API_KEY, BASE_URL } from '../Vars';
-import { CButton } from 'components/Button/CButton';
+import CButton from 'components/Button/CButton';
 
 const MovieInfo = () => {
   const { movieId } = useParams();

@@ -2,6 +2,7 @@ import FilmGalleryItem from 'components/FilmGalleryItem/FilmGalleryItem';
 import StContainer from './FilmGallery.components';
 import Container from '../Container/Container';
 import { IMAGE_BASE_URL, noPosterUrl, genres } from '../Vars';
+import PropTypes from 'prop-types';
 
 const FilmGallery = ({ filmArray }) => {
   const filmsList = filmArray.map(film => {
@@ -49,6 +50,10 @@ const FilmGallery = ({ filmArray }) => {
       </StContainer.Ul>
     </Container>
   );
+};
+
+FilmGallery.propTypes = {
+  filmArray: PropTypes.array.isRequired,
 };
 
 export default FilmGallery;

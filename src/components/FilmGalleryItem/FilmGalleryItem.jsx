@@ -1,4 +1,5 @@
 import StGalleryItem from './FilmGalleryItem.components';
+import PropTypes from 'prop-types';
 
 const FilmGalleryItem = ({ film }) => {
   return (
@@ -9,6 +10,10 @@ const FilmGalleryItem = ({ film }) => {
       <StGalleryItem.Details>{film.details}</StGalleryItem.Details>
     </StGalleryItem>
   );
+};
+
+FilmGalleryItem.propTypes = {
+  film: PropTypes.object.isRequired,
 };
 
 export default FilmGalleryItem;
