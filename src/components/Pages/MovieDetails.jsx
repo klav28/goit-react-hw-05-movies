@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
+import { RotatingLines } from 'react-loader-spinner';
 import axios from 'axios';
 import Container from '../Container/Container';
 import MovieInfoDetails from '../MovieInfoDetails/MovieInfoDetails';
@@ -45,7 +46,25 @@ const MovieInfo = () => {
           <CButton bgcolor={'bg-teal-200'}>Reviews</CButton>
         </Link>
       </div>
-      <Outlet />
+      <Suspense
+        fallback={
+          <Container>
+            <div className="mx-auto h-full w-full">
+              <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2">
+                <RotatingLines
+                  strokeColor="grey"
+                  strokeWidth="5"
+                  animationDuration="0.75"
+                  width="96"
+                  visible={true}
+                />
+              </div>
+            </div>
+          </Container>
+        }
+      >
+        <Outlet />
+      </Suspense>
     </Container>
   );
 };
