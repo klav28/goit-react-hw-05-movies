@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const CastCard = ({ cast }) => {
   return (
-    <div className="flex w-44 flex-col px-px">
+    <div className="flex w-44 flex-col px-0.5">
       <img
         className="mb-3 h-52 w-44 rounded-xl object-cover object-left-top shadow-sm"
         src={

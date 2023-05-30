@@ -8,7 +8,6 @@ const StyledSearchbar = styled.div`
   min-height: 64px;
   padding: 12px;
   margin: 0 auto;
-  /* color: #fff; */
 `;
 
 StyledSearchbar.Form = styled.form`

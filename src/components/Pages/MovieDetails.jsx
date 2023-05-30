@@ -6,6 +6,7 @@ import MovieInfoDetails from '../MovieInfoDetails/MovieInfoDetails';
 import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import { API_KEY, BASE_URL } from '../Vars';
 import CButton from 'components/Button/CButton';
+import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
 
 const MovieInfo = () => {
   const { movieId } = useParams();
@@ -13,7 +14,7 @@ const MovieInfo = () => {
   const [filmInfo, setFilmInfo] = useState([]);
   const location = useLocation();
   console.log('Location:', location);
-  // const backLinkHref = location.state.from;
+  const backLinkHref = location.state?.from ?? '/';
 
   useEffect(() => {
     const fetchFilm = async page => {
@@ -39,14 +40,27 @@ const MovieInfo = () => {
 
   return (
     <Container>
-      {/* <Link to={backLinkHref}>Back to movies</Link> */}
+      <Link
+        className="inline-flex items-center gap-2 p-5 text-2xl font-thin"
+        to={backLinkHref}
+      >
+        <BsFillArrowLeftCircleFill></BsFillArrowLeftCircleFill>Back to movies
+      </Link>
       {filmInfo.id && <MovieInfoDetails movie={filmInfo} />}
       <div className="mt-4 flex gap-3">
-        <Link to={`/movies/${movieId}/cast`} className="w-full">
+        <Link
+          state={{ from: backLinkHref }}
+          to={`/movies/${movieId}/cast`}
+          className="w-full"
+        >
           <CButton bgcolor={'bg-amber-200'}>Cast</CButton>
         </Link>
 
-        <Link to={`/movies/${movieId}/reviews`} className="w-full">
+        <Link
+          state={{ from: backLinkHref }}
+          to={`/movies/${movieId}/reviews`}
+          className="w-full"
+        >
           <CButton bgcolor={'bg-teal-200'}>Reviews</CButton>
         </Link>
       </div>

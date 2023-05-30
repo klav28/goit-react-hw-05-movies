@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const StMovieDetails = styled.div`
   display: flex;
   width: 100%;
+  padding-top: 16px;
 `;
 
 StMovieDetails.Poster = styled.img`

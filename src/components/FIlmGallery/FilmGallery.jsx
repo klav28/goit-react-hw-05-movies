@@ -3,8 +3,12 @@ import StContainer from './FilmGallery.components';
 import Container from '../Container/Container';
 import { IMAGE_BASE_URL, noPosterUrl, genres } from '../Vars';
 import PropTypes from 'prop-types';
+import { useLocation } from 'react-router-dom';
 
 const FilmGallery = ({ filmArray }) => {
+  const location = useLocation();
+  console.log('location gallary', location);
+
   const filmsList = filmArray.map(film => {
     const posterUrl = film.poster_path
       ? `${IMAGE_BASE_URL}w500/${film.poster_path}`
@@ -41,7 +45,10 @@ const FilmGallery = ({ filmArray }) => {
         {filmsList.map(film => (
           <li key={film.id}>
             <StContainer.Card>
-              <StContainer.Link to={`movies/${film.id}`}>
+              <StContainer.Link
+                state={{ from: location.pathname + location.search }}
+                to={`/movies/${film.id}`}
+              >
                 <FilmGalleryItem film={film} />
               </StContainer.Link>
             </StContainer.Card>

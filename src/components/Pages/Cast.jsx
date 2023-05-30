@@ -34,7 +34,6 @@ const Cast = () => {
 
   return (
     <div>
-      {/* <h3 className="text-xl text-gray-700">Cast</h3> */}
       <ul className="flex flex-wrap gap-5 gap-y-7 pt-5">
         {cast.length > 0 &&
           cast.map(el => (
