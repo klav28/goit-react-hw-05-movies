@@ -1,5 +1,5 @@
 import StMovieDetails from './MovieInfoDetails.component';
-import { IMAGE_BASE_URL } from '../Vars';
+import { IMAGE_BASE_URL, noPosterUrl } from '../Vars';
 import PropTypes from 'prop-types';
 
 const MovieInfoDetails = ({ movie }) => {
@@ -9,7 +9,11 @@ const MovieInfoDetails = ({ movie }) => {
   return (
     <StMovieDetails>
       <StMovieDetails.Poster
-        src={`${IMAGE_BASE_URL}w500/${movie.poster_path}`}
+        src={
+          movie.poster_path
+            ? `${IMAGE_BASE_URL}w500/${movie.poster_path}`
+            : `${noPosterUrl}`
+        }
         alt={movie.title}
       />
       <StMovieDetails.Info>
